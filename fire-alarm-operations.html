@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Starky Paulino's Fire Alarm and Building Operations Analytics case study. Four Power BI pages demonstrated with fictional data."><title>Fire Alarm &amp; Building Operations Analytics | Starky Paulino</title><style>
+
+
+
+
+
+
+
+    .fw-container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+
+
+
+    .fw-section{padding:70px 0}
+
+
+
+    .fw-section:nth-of-type(even){background:#f3f7fc;color:#14243a}
+
+
+
+    .fw-section:nth-of-type(even) h2,.fw-section:nth-of-type(even) h3{color:#10223b}
+
+
+
+    .fw-eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#3b82f6;margin:0 0 12px}
+
+
+
+    .fw-section h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2;margin:0 0 18px}
+
+
+
+    .fw-lead{max-width:850px;line-height:1.8}
+
+
+
+    .fw-hero{padding:90px 0 76px;background:linear-gradient(125deg,#07182b,#123967);color:white}
+
+
+
+    .fw-hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.12;max-width:930px;margin:12px 0 20px;color:white}
+
+
+
+    .fw-hero p{max-width:800px;line-height:1.7;color:#dce8f7}
+
+
+
+    .fw-tags{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}
+
+
+
+    .fw-tags span{padding:7px 12px;border:1px solid #6c8cb3;border-radius:999px;font-size:.85rem;color:#e5f0ff}
+
+
+
+    .fw-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+
+
+    .fw-btn{display:inline-block;padding:12px 19px;border-radius:9px;background:#2563eb;color:white!important;text-decoration:none;font-weight:700}
+
+
+
+    .fw-btn.secondary{background:transparent;border:1px solid #aac2e3}
+
+
+
+    .fw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:26px}
+
+
+
+    .fw-card{background:white;color:#13253c;border:1px solid #dfe7f0;border-radius:13px;padding:23px;box-shadow:0 5px 20px rgba(8,28,51,.05)}
+
+
+
+    .fw-card h3{margin:0 0 10px;font-size:1.04rem;color:#162f50}
+
+
+
+    .fw-card p{margin:0;line-height:1.65;color:#485a70}
+
+
+
+    .fw-number{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;color:#1d4ed8;margin-bottom:8px}
+
+
+
+    .fw-note{font-size:.9rem;color:#65758a;margin-top:18px;line-height:1.7}
+
+
+
+    .fw-flow{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:26px 0}
+
+
+
+    .fw-flow span{background:white;color:#173351;border:1px solid #d7e4f1;border-radius:9px;padding:11px 13px;font-weight:700;font-size:.88rem}
+
+
+
+    .fw-flow b{color:#2563eb}
+
+
+
+    .fw-table-wrap{overflow-x:auto;margin:24px 0;border-radius:12px;border:1px solid #dbe4ee}
+
+
+
+    .fw-table{width:100%;border-collapse:collapse;background:white;color:#172b43;min-width:640px}
+
+
+
+    .fw-table th,.fw-table td{padding:13px 15px;text-align:left;border-bottom:1px solid #e7edf5;vertical-align:top}
+
+
+
+    .fw-table th{background:#eaf1fb;color:#163b67}
+
+
+
+    .fw-table tr:last-child td{border-bottom:0}
+
+
+
+    .fw-code{background:#0b1d32;color:#dbeafe;padding:20px;border-radius:11px;overflow-x:auto;font-size:.85rem;line-height:1.65;white-space:pre}
+
+
+
+    .fw-code-label{font-weight:800;margin:25px 0 10px}
+
+
+
+    .fw-insight{border-left:4px solid #2563eb;padding:15px 19px;background:#eef5ff;color:#18334e;border-radius:0 9px 9px 0;margin:16px 0;line-height:1.7}
+
+
+
+    .fw-image{width:100%;height:auto;border:1px solid #d9e3ef;border-radius:12px;display:block;margin:18px 0 32px;background:white}
+
+
+
+    .fw-image-caption{font-size:.85rem;color:#60758d}
+
+
+
+    .fw-footer{padding:35px 0;background:#07182b;color:#d6e6fa;text-align:center}
+
+
+
+    .fw-footer a{color:#b9d6ff}
+
+
+
+    @media(max-width:800px){.fw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fw-section{padding:50px 0}}
+
+
+
+    @media(max-width:520px){.fw-grid{grid-template-columns:1fr}.fw-container{width:min(100% - 28px,1120px)}.fw-hero{padding:60px 0}}
+
+
+
+
+
+body{margin:0;font-family:Arial,sans-serif;color:#14243a;background:#fff;line-height:1.6}.case-nav{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px max(20px,calc((100% - 1120px)/2));background:#07182b;color:white}.case-nav a{color:#dbeafe}.logo{font-weight:700}.fw-hero .fw-eyebrow{color:#93c5fd} .fw-note{color:#485a70}a:focus-visible{outline:3px solid #f59e0b;outline-offset:4px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}figure{margin:36px 0}figcaption{line-height:1.6;color:#485a70}img{max-width:100%}.fw-image{margin-bottom:12px}.fw-card ul{padding-left:20px}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:white;padding:12px;z-index:10}.fw-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:600px){.fw-grid.two{grid-template-columns:1fr}.case-nav{flex-wrap:wrap}.fw-table{min-width:500px}}
+</style></head>
+<body><a class="skip" href="#main">Skip to content</a><nav class="case-nav" aria-label="Case study navigation"><div class="logo">Starky Paulino</div><a href="index.html#projects">← Back to Portfolio</a></nav>
+<header class="fw-hero"><div class="fw-container"><p class="fw-eyebrow">Business Intelligence · Operations Analytics</p><h1>Fire Alarm &amp; Building Operations Analytics</h1><p>Making recorded activity, recurring conditions and documentation gaps easier to investigate.</p><div class="fw-tags"><span>Excel</span><span>Power Query</span><span>Power BI</span><span>DAX</span></div><p><strong>Public demonstration uses fictional records. It does not describe a real building.</strong></p><div class="fw-actions"><a class="fw-btn" href="#reports">Explore the report</a><a class="fw-btn secondary" href="https://github.com/starkman9880/fire-alarm-building-operations-analytics" target="_blank" rel="noopener noreferrer">View GitHub repository ↗</a></div></div></header>
+<main id="main"><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">01 / Business problem</p><h2>Separate operational patterns from gaps in the evidence</h2><p class="fw-lead">Shift reports can record the same condition repeatedly. Missing reports, inconsistent categories and incomplete times make comparisons difficult. I built a four-page Power BI report that shows recorded activity alongside reporting coverage and duration eligibility.</p><p>My Fire Life Safety Director experience informed the distinctions between a recorded observation, a unique incident and a confirmed restoration.</p><div class="fw-grid"><div class="fw-card"><h3>Monthly activity</h3><p>Compare recorded impairments by month, category, floor and reason.</p></div><div class="fw-card"><h3>Recurring conditions</h3><p>Explore trouble and supervisory sightings without counting every sighting as a new incident.</p></div><div class="fw-card"><h3>Evidence quality</h3><p>Keep missing reports, uncertain times and excluded durations visible.</p></div></div></div></section>
+<section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">02 / Preparation and model</p><h2>Four preparation tables, one shared calendar</h2><div class="fw-flow"><span>Excel preparation</span><b>→</b><span>Power Query</span><b>→</b><span>Shared date model</span><b>→</b><span>DAX measures</span><b>→</b><span>Power BI report</span></div><p class="fw-lead">The internal workflow preserves fixed record IDs and original labels alongside standardized categories. It flags uncertain dates, possible repeats, incomplete times and unresolved mappings. Impairments, FACP observations, alarm records and coverage connect to a date table through one-to-many relationships.</p><p>Directly observed conditions are separated from context and assumed-live rows. Durations are classified as eligible, requiring review or excluded. Only eligible values enter the average and median measures.</p><p class="fw-note">The public workbook was generated independently using the same table structure. It contains fictional records rather than anonymized operational rows.</p></div></section>
+<section class="fw-section" id="reports"><div class="fw-container"><p class="fw-eyebrow">03 / Power BI report</p><h2>Explore the four report pages</h2><p class="fw-lead">These static captures show the synthetic demonstration for February 1–September 30, 2026. Date filters and chart interactions are available in the Power BI Desktop report.</p><div class="fw-grid"><div class="fw-card"><div class="fw-number">401</div><h3>Fictional impairment records</h3><p>Recorded entries, not unique outages.</p></div><div class="fw-card"><div class="fw-number">591</div><h3>Fictional FACP observations</h3><p>Context and assumed-live rows excluded.</p></div><div class="fw-card"><div class="fw-number">235</div><h3>Duration-eligible records</h3><p>81 review and 85 excluded records remain separate.</p></div></div>
+<figure><h3>Data Quality & Coverage</h3><a href="https://raw.githubusercontent.com/starkman9880/fire-alarm-building-operations-analytics/main/01_data_quality_coverage.png" target="_blank" rel="noopener noreferrer" aria-label="Open Data Quality & Coverage screenshot at full size"><img class="fw-image" src="https://raw.githubusercontent.com/starkman9880/fire-alarm-building-operations-analytics/main/01_data_quality_coverage.png" alt="Synthetic Power BI data quality report showing 401 impairment records and duration eligibility" loading="lazy" width="904" height="546"></a><figcaption>Fictional reporting coverage and duration eligibility. Coverage totals are 221 complete, 13 partial and 8 no-report days. Select the image to view it at full size.</figcaption></figure>
+<figure><h3>Operations Overview</h3><a href="https://raw.githubusercontent.com/starkman9880/fire-alarm-building-operations-analytics/main/02_operations_overview.png" target="_blank" rel="noopener noreferrer" aria-label="Open Operations Overview screenshot at full size"><img class="fw-image" src="https://raw.githubusercontent.com/starkman9880/fire-alarm-building-operations-analytics/main/02_operations_overview.png" alt="Synthetic Power BI operations overview with monthly, category, floor and reason charts" loading="lazy" width="904" height="546"></a><figcaption>Monthly activity, categories, floor-disablement patterns and reasons. Counts describe fictional recorded entries. Select the image to view it at full size.</figcaption></figure>
+<figure><h3>Trouble & Supervisory</h3><a href="https://raw.githubusercontent.com/starkman9880/fire-alarm-building-operations-analytics/main/03_trouble_supervisory.png" target="_blank" rel="noopener noreferrer" aria-label="Open Trouble & Supervisory screenshot at full size"><img class="fw-image" src="https://raw.githubusercontent.com/starkman9880/fire-alarm-building-operations-analytics/main/03_trouble_supervisory.png" alt="Synthetic Power BI trouble and supervisory report with invented device identifiers" loading="lazy" width="904" height="546"></a><figcaption>300 fictional trouble observations and 93 supervisory observations. Device labels are invented demonstration identifiers. Select the image to view it at full size.</figcaption></figure>
+<figure><h3>Documented Durations</h3><a href="https://raw.githubusercontent.com/starkman9880/fire-alarm-building-operations-analytics/main/04_documented_durations.png" target="_blank" rel="noopener noreferrer" aria-label="Open Documented Durations screenshot at full size"><img class="fw-image" src="https://raw.githubusercontent.com/starkman9880/fire-alarm-building-operations-analytics/main/04_documented_durations.png" alt="Synthetic Power BI report comparing average and median eligible duration by category" loading="lazy" width="904" height="546"></a><figcaption>Average and median durations use the 235 eligible fictional records. Overlapping durations do not measure total building downtime or mean time to repair. Select the image to view it at full size.</figcaption></figure>
+</div></section><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">04 / Analytical decisions</p><h2>Make each measure's scope explicit</h2><div class="fw-grid two"><div class="fw-card"><h3>Observations are not incidents</h3><p>The same condition may appear in several shifts. The report counts sightings without claiming a new incident each time.</p></div><div class="fw-card"><h3>Missing reports are not quiet days</h3><p>Coverage is reported separately. No report does not establish that no event occurred.</p></div><div class="fw-card"><h3>Missing durations stay missing</h3><p>Review and excluded records do not become zeros. Eligible counts accompany duration comparisons.</p></div><div class="fw-card"><h3>Average and median together</h3><p>Comparing both measures helps expose the effect of long durations. Neither establishes total downtime.</p></div></div></div></section>
+<section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">05 / Validation and limitations</p><h2>Report behavior checked; source review remains open</h2><p class="fw-lead">Record totals and duration classifications were checked, date filters and interactions tested, and Power Query conversion errors resolved while preserving source text. Data and schema refresh completed without reported errors. The separate synthetic report's headline totals were checked against its generated workbook.</p><div class="fw-insight"><strong>Internal source limitations:</strong> January coverage is limited and October is partial. Recording practices changed in August 2026, limiting comparisons across that change. These historical limitations apply to the internal data, not the fictional demonstration.</div><p>Open source-review questions mean the internal analysis remains provisional. Repeated observations, incomplete time evidence and overlapping durations prevent claims of unique outage counts, total downtime or overall mean time to repair.</p><p class="fw-note">Operational records, the original Excel workbook and the internal PBIX are not distributed on this page. Synthetic results are demonstrations, not findings about a real building.</p></div></section>
+<section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">06 / Intended management use</p><h2>Support focused investigation and better documentation</h2><p class="fw-lead">The report is designed to help teams identify recurring conditions, compare floor activity, locate documentation gaps and prioritize source review. It does not claim a measured reduction in downtime, response time or operational risk.</p><p><strong>Skills demonstrated:</strong> Excel preparation, Power Query transformations, dimensional modeling, DAX, interactive Power BI reporting and analytical communication.</p><a class="fw-btn" href="https://github.com/starkman9880/fire-alarm-building-operations-analytics" target="_blank" rel="noopener noreferrer">Read the methodology on GitHub ↗</a></div></section></main><footer class="fw-footer"><div class="fw-container">Starky Paulino · Fire Alarm &amp; Building Operations Analytics<br><a href="index.html#projects">Back to Portfolio</a></div></footer></body></html>

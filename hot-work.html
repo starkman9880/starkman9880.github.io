@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Hot Work Operations Analytics: Excel and Power BI portfolio case study by Starky Paulino. Provisional analysis with transparent data quality reporting."><title>Hot Work Operations Analytics | Starky Paulino</title><link rel="stylesheet" href="style.css"><style>
+
+    /* Page-specific enhancements; your existing style.css remains in use. */
+
+    .fw-container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+
+    .fw-section{padding:70px 0}
+
+    .fw-section:nth-of-type(even){background:#f3f7fc;color:#14243a}
+
+    .fw-section:nth-of-type(even) h2,.fw-section:nth-of-type(even) h3{color:#10223b}
+
+    .fw-eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#3b82f6;margin:0 0 12px}
+
+    .fw-section h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2;margin:0 0 18px}
+
+    .fw-lead{max-width:850px;line-height:1.8}
+
+    .fw-hero{padding:90px 0 76px;background:linear-gradient(125deg,#07182b,#123967);color:white}
+
+    .fw-hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.12;max-width:930px;margin:12px 0 20px;color:white}
+
+    .fw-hero p{max-width:800px;line-height:1.7;color:#dce8f7}
+
+    .fw-tags{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}
+
+    .fw-tags span{padding:7px 12px;border:1px solid #6c8cb3;border-radius:999px;font-size:.85rem;color:#e5f0ff}
+
+    .fw-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+    .fw-btn{display:inline-block;padding:12px 19px;border-radius:9px;background:#2563eb;color:white!important;text-decoration:none;font-weight:700}
+
+    .fw-btn.secondary{background:transparent;border:1px solid #aac2e3}
+
+    .fw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:26px}
+
+    .fw-card{background:white;color:#13253c;border:1px solid #dfe7f0;border-radius:13px;padding:23px;box-shadow:0 5px 20px rgba(8,28,51,.05)}
+
+    .fw-card h3{margin:0 0 10px;font-size:1.04rem;color:#162f50}
+
+    .fw-card p{margin:0;line-height:1.65;color:#485a70}
+
+    .fw-number{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;color:#1d4ed8;margin-bottom:8px}
+
+    .fw-note{font-size:.9rem;color:#65758a;margin-top:18px;line-height:1.7}
+
+    .fw-flow{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:26px 0}
+
+    .fw-flow span{background:white;color:#173351;border:1px solid #d7e4f1;border-radius:9px;padding:11px 13px;font-weight:700;font-size:.88rem}
+
+    .fw-flow b{color:#2563eb}
+
+    .fw-table-wrap{overflow-x:auto;margin:24px 0;border-radius:12px;border:1px solid #dbe4ee}
+
+    .fw-table{width:100%;border-collapse:collapse;background:white;color:#172b43;min-width:640px}
+
+    .fw-table th,.fw-table td{padding:13px 15px;text-align:left;border-bottom:1px solid #e7edf5;vertical-align:top}
+
+    .fw-table th{background:#eaf1fb;color:#163b67}
+
+    .fw-table tr:last-child td{border-bottom:0}
+
+    .fw-code{background:#0b1d32;color:#dbeafe;padding:20px;border-radius:11px;overflow-x:auto;font-size:.85rem;line-height:1.65;white-space:pre}
+
+    .fw-code-label{font-weight:800;margin:25px 0 10px}
+
+    .fw-insight{border-left:4px solid #2563eb;padding:15px 19px;background:#eef5ff;color:#18334e;border-radius:0 9px 9px 0;margin:16px 0;line-height:1.7}
+
+    .fw-image{width:100%;height:auto;border:1px solid #d9e3ef;border-radius:12px;display:block;margin:18px 0 32px;background:white}
+
+    .fw-image-caption{font-size:.85rem;color:#60758d}
+
+    .fw-footer{padding:35px 0;background:#07182b;color:#d6e6fa;text-align:center}
+
+    .fw-footer a{color:#b9d6ff}
+
+    @media(max-width:800px){.fw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fw-section{padding:50px 0}}
+
+    @media(max-width:520px){.fw-grid{grid-template-columns:1fr}.fw-container{width:min(100% - 28px,1120px)}.fw-hero{padding:60px 0}}
+
+  
+body{margin:0;font-family:Arial,sans-serif;color:#14243a;background:#fff;line-height:1.6}.case-nav{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px max(20px,calc((100% - 1120px)/2));background:#07182b;color:white}.case-nav a{color:#dbeafe}.logo{font-weight:700}.fw-hero .fw-eyebrow{color:#93c5fd} .fw-note{color:#485a70}a:focus-visible{outline:3px solid #f59e0b;outline-offset:4px}</style></head><body class="case-study-page"><nav class="case-nav" aria-label="Case study navigation"><div class="logo">Starky Paulino</div><a href="index.html#projects">← Back to Portfolio</a></nav><header class="fw-hero"><div class="fw-container"><p class="fw-eyebrow">BUSINESS INTELLIGENCE · OPERATIONS ANALYTICS</p><h1>Hot Work Operations Analytics</h1><p>Turning work session records into a clear view of contractor activity, documented hours and data quality.</p><div class="fw-tags"><span>Excel</span><span>Power Query</span><span>Power BI</span><span>DAX</span><span>Data Quality</span></div><p><strong>Provisional dashboard built · Source validation ongoing</strong></p><div class="fw-actions"><a class="fw-btn" href="#dashboard">Explore Dashboard Results</a><a class="fw-btn secondary" href="https://github.com/starkman9880/hot-work-operations-analytics" target="_blank" rel="noopener noreferrer">View GitHub Repository ↗</a></div></div></header><main><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">01 / BUSINESS PROBLEM</p><h2>Make operational activity and evidence gaps visible</h2><p class="fw-lead">Hot work records contain contractor activity, recorded statuses and times, but inconsistent company spellings and incomplete documentation complicate reporting. This project combines Excel preparation with Power BI analysis, while keeping unresolved source questions visible.</p><p>My Fire Life Safety Director experience informed the distinction between a permit identifier, a work session and documented completion.</p></div></section><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">02 / PROVISIONAL SNAPSHOT</p><h2>What the prepared records show</h2><div class="fw-grid"><div class="fw-card"><div class="fw-number">82</div><h3>Work session records</h3><p>One row per permit record; not a distinct-permit count.</p></div><div class="fw-card"><div class="fw-number">343.50</div><h3>Documented hours</h3><p>Calculated from 70 eligible records.</p></div><div class="fw-card"><div class="fw-number">12</div><h3>Duration exclusions</h3><p>11 records with missing times and one held for a start-time conflict.</p></div><div class="fw-card"><div class="fw-number">46.3%</div><h3>Largest contractor share</h3><p>38 of 82 records belong to GWA.</p></div><div class="fw-card"><div class="fw-number">71 / 10 / 1</div><h3>Recorded statuses</h3><p>Closed / Expired / Open, as recorded in the source.</p></div><div class="fw-card"><div class="fw-number">Provisional</div><h3>Validation status</h3><p>Source review is ongoing. Totals may change.</p></div></div><p class="fw-note">Recorded statuses do not independently establish present operating conditions or compliance. Documented hours exclude incomplete or disputed durations.</p></div></section><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">03 / WORKFLOW</p><h2>From Excel records to Power BI</h2><div class="fw-flow"><span>Excel source tables</span><b>→</b><span>Normalization &amp; review flags</span><b>→</b><span>Power Query</span><b>→</b><span>DAX measures</span><b>→</b><span>Power BI report</span></div><p class="fw-lead">Fixed WorkSessionIDs preserve record identity when rows are sorted. Original company names remain intact; confirmed aliases are normalized for reporting. Actual work completion and recorded permit end are kept separately. Corrections retain prior values and evidence references.</p><p>The report imports <code>tblPBIWorkSessions</code>: 82 rows, all marked Provisional. New records currently require an assigned ID and a corresponding export-table row.</p></div></section><section class="fw-section" id="dashboard"><div class="fw-container"><p class="fw-eyebrow">04 / POWER BI REPORT</p><h2>Operations overview</h2><p class="fw-lead">Four KPI cards summarize scope and documented hours. Contractor and recorded-status charts support activity review; date and contractor slicers filter the report.</p><a href="https://raw.githubusercontent.com/starkman9880/hot-work-operations-analytics/main/01_hot_work_overview.png" target="_blank" rel="noopener noreferrer"><img class="fw-image" src="https://raw.githubusercontent.com/starkman9880/hot-work-operations-analytics/main/01_hot_work_overview.png" alt="Power BI overview: 82 records, 343.50 documented hours, 70 included and 12 excluded" loading="lazy"></a><p class="fw-image-caption">Static report capture. Open the image to inspect details; slicers are interactive in the Power BI Desktop report.</p></div></section><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">05 / DATA QUALITY</p><h2>Show the limitations alongside the findings</h2><a href="https://raw.githubusercontent.com/starkman9880/hot-work-operations-analytics/main/02_hot_work_data_quality.png" target="_blank" rel="noopener noreferrer"><img class="fw-image" src="https://raw.githubusercontent.com/starkman9880/hot-work-operations-analytics/main/02_hot_work_data_quality.png" alt="Data Quality report showing exclusion counts of 9, 2 and 1, with validation statuses totaling 82" loading="lazy"></a><div class="fw-insight"><strong>12 durations are excluded:</strong> nine missing an end time, two missing both start and end times, and one held for a start-time conflict.</div><div class="fw-insight"><strong>No open review item does not mean independently verified.</strong> All 82 records remain provisional.</div></div></section><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">06 / DAX</p><h2>Measures with explicit scope</h2><pre class="fw-code"><code>Work Session Records =
+COUNTROWS('tblPBIWorkSessions')
+
+Documented Hours =
+SUM('tblPBIWorkSessions'[DocumentedDurationHrs])
+
+Sessions With Duration =
+CALCULATE(
+    COUNTROWS('tblPBIWorkSessions'),
+    'tblPBIWorkSessions'[DurationEligibility] = "Included"
+)
+
+Sessions Excluded =
+[Work Session Records] - [Sessions With Duration]</code></pre></div></section><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">07 / VALIDATION</p><h2>Internal consistency checked; source review remains open</h2><p class="fw-lead">Report totals were compared with the prepared Excel table. Contractor and date slicers were tested, then restored. After refresh, totals remained 82 records, 343.50 hours, 70 included and 12 excluded.</p><div class="fw-table-wrap"><table class="fw-table"><thead><tr><th>Reconciliation group</th><th>Count</th><th>Meaning</th></tr></thead><tbody><tr><td>Matched log sessions</td><td>81</td><td>Linked to database records; matching does not resolve all evidence questions.</td></tr><tr><td>Log-only sessions</td><td>13</td><td>Excluded from this Power BI dataset.</td></tr><tr><td>Database-only record</td><td>1</td><td>Pending source review.</td></tr></tbody></table></div><p>Fifteen reconciliation review items remain pending, alongside additional review flags and a certificate identity conflict. Three records were corrected against a workbook source transcription; original reports were not reviewed for those corrections.</p></div></section><section class="fw-section"><div class="fw-container"><p class="fw-eyebrow">08 / DELIVERY &amp; NEXT STEPS</p><h2>A working analytical prototype</h2><p class="fw-lead"><strong>Built:</strong> Excel preparation, correction tracking, Power Query import, DAX measures, two Power BI pages, slicer testing and a refresh check.</p><p><strong>Next:</strong> review original evidence, resolve time and possible-duplicate conflicts, and update totals and screenshots as records are validated.</p><p class="fw-note">This portfolio page presents summary results. Source reports, row-level exports, the Excel workbook and the Power BI file are not distributed here. This is an analytical prototype, not a compliance determination.</p></div></section></main><footer class="fw-footer"><div class="fw-container">Starky Paulino · Hot Work Operations Analytics<br><a href="index.html#projects">Back to Portfolio</a></div></footer></body></html>

@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fire Warden Compliance & Readiness Analytics: a BigQuery, SQL and Looker Studio business intelligence portfolio case study.">
+  <title>Fire Warden Compliance & Readiness Analytics | Starky Paulino</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-specific enhancements; your existing style.css remains in use. */
+    .fw-container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+    .fw-section{padding:70px 0}
+    .fw-section:nth-of-type(even){background:#f3f7fc;color:#14243a}
+    .fw-section:nth-of-type(even) h2,.fw-section:nth-of-type(even) h3{color:#10223b}
+    .fw-eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#3b82f6;margin:0 0 12px}
+    .fw-section h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2;margin:0 0 18px}
+    .fw-lead{max-width:850px;line-height:1.8}
+    .fw-hero{padding:90px 0 76px;background:linear-gradient(125deg,#07182b,#123967);color:white}
+    .fw-hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.12;max-width:930px;margin:12px 0 20px;color:white}
+    .fw-hero p{max-width:800px;line-height:1.7;color:#dce8f7}
+    .fw-tags{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}
+    .fw-tags span{padding:7px 12px;border:1px solid #6c8cb3;border-radius:999px;font-size:.85rem;color:#e5f0ff}
+    .fw-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .fw-btn{display:inline-block;padding:12px 19px;border-radius:9px;background:#2563eb;color:white!important;text-decoration:none;font-weight:700}
+    .fw-btn.secondary{background:transparent;border:1px solid #aac2e3}
+    .fw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:26px}
+    .fw-card{background:white;color:#13253c;border:1px solid #dfe7f0;border-radius:13px;padding:23px;box-shadow:0 5px 20px rgba(8,28,51,.05)}
+    .fw-card h3{margin:0 0 10px;font-size:1.04rem;color:#162f50}
+    .fw-card p{margin:0;line-height:1.65;color:#485a70}
+    .fw-number{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;color:#1d4ed8;margin-bottom:8px}
+    .fw-note{font-size:.9rem;color:#65758a;margin-top:18px;line-height:1.7}
+    .fw-flow{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:26px 0}
+    .fw-flow span{background:white;color:#173351;border:1px solid #d7e4f1;border-radius:9px;padding:11px 13px;font-weight:700;font-size:.88rem}
+    .fw-flow b{color:#2563eb}
+    .fw-table-wrap{overflow-x:auto;margin:24px 0;border-radius:12px;border:1px solid #dbe4ee}
+    .fw-table{width:100%;border-collapse:collapse;background:white;color:#172b43;min-width:640px}
+    .fw-table th,.fw-table td{padding:13px 15px;text-align:left;border-bottom:1px solid #e7edf5;vertical-align:top}
+    .fw-table th{background:#eaf1fb;color:#163b67}
+    .fw-table tr:last-child td{border-bottom:0}
+    .fw-code{background:#0b1d32;color:#dbeafe;padding:20px;border-radius:11px;overflow-x:auto;font-size:.85rem;line-height:1.65;white-space:pre}
+    .fw-code-label{font-weight:800;margin:25px 0 10px}
+    .fw-insight{border-left:4px solid #2563eb;padding:15px 19px;background:#eef5ff;color:#18334e;border-radius:0 9px 9px 0;margin:16px 0;line-height:1.7}
+    .fw-image{width:100%;height:auto;border:1px solid #d9e3ef;border-radius:12px;display:block;margin:18px 0 32px;background:white}
+    .fw-image-caption{font-size:.85rem;color:#60758d}
+    .fw-footer{padding:35px 0;background:#07182b;color:#d6e6fa;text-align:center}
+    .fw-footer a{color:#b9d6ff}
+    @media(max-width:800px){.fw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fw-section{padding:50px 0}}
+    @media(max-width:520px){.fw-grid{grid-template-columns:1fr}.fw-container{width:min(100% - 28px,1120px)}.fw-hero{padding:60px 0}}
+  </style>
+</head>
+<body class="case-study-page">
+  <nav class="case-nav" aria-label="Case study navigation">
+    <div class="logo">Starky Paulino</div>
+    <a href="index.html#projects" class="back-link">← Back to Portfolio</a>
+  </nav>
+
+  <header class="fw-hero">
+    <div class="fw-container">
+      <div class="fw-eyebrow">BUSINESS INTELLIGENCE · OPERATIONS ANALYTICS</div>
+      <h1>Fire Warden Compliance &amp; Readiness Analytics</h1>
+      <p>Turning anonymized Fire Warden roster and check-in records into executive KPIs, staffing intelligence, floor-level compliance analysis and management-ready recommendations.</p>
+      <div class="fw-tags"><span>Google Cloud</span><span>BigQuery</span><span>SQL</span><span>Looker Studio</span><span>Data Modeling</span><span>GitHub</span></div>
+      <div class="fw-actions">
+        <a class="fw-btn" href="#dashboard">Explore Dashboard Results</a>
+        <a class="fw-btn secondary" href="https://github.com/starkman9880/fire-warden-compliance-analytics" target="_blank" rel="noopener noreferrer">View GitHub Repository ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="fw-section" id="problem">
+      <div class="fw-container">
+        <p class="fw-eyebrow">01 / BUSINESS PROBLEM</p>
+        <h2>How can management spot attendance gaps before they become persistent operational problems?</h2>
+        <p class="fw-lead">Individual Fire Warden check-in records show who reported, but do not readily reveal which floors are underperforming, whether required positions are staffed, or where follow-up should be prioritized. This project organizes those records into a consistent reporting model that separates <strong>staffing capacity</strong> from <strong>attendance execution</strong>.</p>
+        <div class="fw-grid">
+          <div class="fw-card"><h3>Business challenge</h3><p>Raw check-in records are difficult to summarize consistently across floors and reporting dates.</p></div>
+          <div class="fw-card"><h3>Analytical solution</h3><p>Use BigQuery SQL views to calculate validated attendance, staffing, target and exception metrics.</p></div>
+          <div class="fw-card"><h3>Management outcome</h3><p>Highlight below-target floors and quantify the gap requiring corrective follow-up.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fw-section" id="results">
+      <div class="fw-container">
+        <p class="fw-eyebrow">02 / SEPTEMBER 2026 RESULTS</p>
+        <h2>Executive KPI snapshot</h2>
+        <p class="fw-lead">Reporting scope: <strong>12 active floors</strong>. Two additional floors were categorized as inactive/construction and excluded from the active-floor target calculation. The 80% threshold is a <strong>project attendance benchmark</strong>, not a stated regulatory standard.</p>
+        <div class="fw-grid">
+          <div class="fw-card"><div class="fw-number">69.64%</div><h3>Attendance Coverage</h3><p>351 completed out of 504 expected check-ins.</p></div>
+          <div class="fw-card"><div class="fw-number">351</div><h3>Completed Check-ins</h3><p>Recorded attendance completions during the reporting period.</p></div>
+          <div class="fw-card"><div class="fw-number">153</div><h3>Missing Check-ins</h3><p>Expected attendance opportunities without a completed check-in.</p></div>
+          <div class="fw-card"><div class="fw-number">41.67%</div><h3>Floors Meeting Target</h3><p>5 of 12 active floors achieved at least 80% coverage.</p></div>
+          <div class="fw-card"><div class="fw-number">100%</div><h3>Active Staffing Coverage</h3><p>All 24 active Fire Warden and Deputy Warden positions were assigned.</p></div>
+          <div class="fw-card"><div class="fw-number">0</div><h3>Active Vacancies</h3><p>Four inactive/construction positions were not counted as active vacancies.</p></div>
+        </div>
+        <p class="fw-note">Attendance coverage = completed ÷ expected × 100. Active staffing coverage = assigned active positions ÷ all active positions × 100. Floor target attainment = active floors at or above 80% ÷ active floors × 100.</p>
+      </div>
+    </section>
+
+    <section class="fw-section" id="architecture">
+      <div class="fw-container">
+        <p class="fw-eyebrow">03 / DATA ARCHITECTURE</p>
+        <h2>From operational records to decision support</h2>
+        <p class="fw-lead">The designed workflow connects QR check-ins and roster data with cloud transformation and reporting. The published September case study uses sanitized portfolio datasets and BigQuery reporting views; it does not claim that every live automation step has been deployed.</p>
+        <div class="fw-flow" aria-label="Analytics pipeline"><span>QR / Google Forms</span><b>→</b><span>Google Sheets</span><b>→</b><span>BigQuery</span><b>→</b><span>SQL Views</span><b>→</b><span>Looker Studio</span><b>→</b><span>Management Insights</span></div>
+        <p><strong>Supporting source:</strong> Sanitized historical attendance and roster records can also be imported from Excel/CSV into BigQuery.</p>
+        <div class="fw-grid">
+          <div class="fw-card"><h3>Roster dimension</h3><p>Participant ID, floor, role, assignment dates, roster status, assigned flag and roster version.</p></div>
+          <div class="fw-card"><h3>Check-in fact</h3><p>Check-in date, anonymized participant ID, floor, role, checked-in flag and reporting month.</p></div>
+          <div class="fw-card"><h3>Reporting layer</h3><p>Reusable SQL views for executive KPIs, roster coverage, floor targets, daily trends, readiness and exceptions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fw-section" id="model">
+      <div class="fw-container">
+        <p class="fw-eyebrow">04 / DATA MODEL &amp; KPI RULES</p>
+        <h2>Two datasets, distinct management questions</h2>
+        <div class="fw-table-wrap"><table class="fw-table"><thead><tr><th>Dataset</th><th>Key fields</th><th>Analytical role</th></tr></thead><tbody>
+          <tr><td>Fire Warden roster</td><td><code>participant_id</code>, <code>floor</code>, <code>role</code>, <code>roster_status</code>, <code>is_assigned</code></td><td>Defines active assignments and staffing availability.</td></tr>
+          <tr><td>Fire Warden check-ins</td><td><code>check_in_date</code>, <code>participant_id</code>, <code>checked_in</code>, <code>reporting_month</code></td><td>Measures attendance completion and missing check-ins.</td></tr>
+        </tbody></table></div>
+        <div class="fw-table-wrap"><table class="fw-table"><thead><tr><th>KPI</th><th>Business rule</th></tr></thead><tbody>
+          <tr><td>Attendance coverage</td><td>Completed check-ins ÷ expected check-ins × 100</td></tr>
+          <tr><td>Missing check-ins</td><td>Expected check-ins − completed check-ins</td></tr>
+          <tr><td>Floor meets target</td><td>Floor attendance coverage ≥ 80%</td></tr>
+          <tr><td>Active staffing coverage</td><td>Assigned active positions ÷ active positions × 100</td></tr>
+          <tr><td>Readiness</td><td>Whether all assigned positions completed their expected check-ins for a staffed floor-day</td></tr>
+        </tbody></table></div>
+      </div>
+    </section>
+
+    <section class="fw-section" id="sql">
+      <div class="fw-container">
+        <p class="fw-eyebrow">05 / BIGQUERY SQL</p>
+        <h2>Reusable reporting views</h2>
+        <p class="fw-lead">Business rules live in BigQuery instead of being independently recreated in dashboard charts. The queries below read the project's reporting views.</p>
+        <div class="fw-code-label">Executive KPI report</div>
+        <pre class="fw-code"><code>SELECT
+  reporting_month,
+  expected_checkins,
+  completed_checkins,
+  missing_checkins,
+  attendance_coverage_pct,
+  floors_meeting_target,
+  total_floors,
+  floors_meeting_target_pct,
+  active_staffing_coverage_pct,
+  active_vacant_positions
+FROM `fire-warden-command-center.fire_warden_analytics.vw_executive_kpi`
+ORDER BY reporting_month;</code></pre>
+        <div class="fw-code-label">Monthly floor performance</div>
+        <pre class="fw-code"><code>SELECT *
+FROM `fire-warden-command-center.fire_warden_analytics.vw_monthly_floor_target_kpi`
+ORDER BY reporting_month DESC;</code></pre>
+        <div class="fw-code-label">Daily attendance trends</div>
+        <pre class="fw-code"><code>SELECT *
+FROM `fire-warden-command-center.fire_warden_analytics.vw_daily_checkin_kpi`
+ORDER BY check_in_date;</code></pre>
+        <div class="fw-code-label">Management exceptions</div>
+        <pre class="fw-code"><code>SELECT *
+FROM `fire-warden-command-center.fire_warden_analytics.vw_management_exceptions`;</code></pre>
+        <p class="fw-note">The full CREATE VIEW definitions are documented in the repository's <a href="https://github.com/starkman9880/fire-warden-compliance-analytics/tree/main/sql" target="_blank" rel="noopener noreferrer">SQL folder</a>. Column selection for the last three examples is intentionally left as <code>SELECT *</code> so it does not assume unverified column names.</p>
+      </div>
+    </section>
+
+    <section class="fw-section" id="dashboard">
+      <div class="fw-container">
+        <p class="fw-eyebrow">06 / LOOKER STUDIO DASHBOARD</p>
+        <h2>From executive overview to actionable exceptions</h2>
+        <p class="fw-lead">The reporting design covers executive KPIs, floor attendance performance, readiness and coverage gaps, daily trends, and data definitions. Below are three screenshots from the portfolio reporting work.</p>
+        <h3>Executive compliance overview</h3>
+        <img class="fw-image" src="images/executive-dashboard.png" alt="Executive dashboard showing September attendance coverage, completed and missing check-ins, staffing and floor targets" loading="lazy">
+        <h3>Floor attendance performance</h3>
+        <img class="fw-image" src="images/floor-performance-dashboard.png" alt="Floor-level attendance coverage compared against the 80 percent project benchmark" loading="lazy">
+        <h3>Management exceptions</h3>
+        <img class="fw-image" src="images/management-exceptions-dashboard.png" alt="Below-target floors and missing check-in exceptions for management review" loading="lazy">
+        <p class="fw-image-caption">
+            Dashboard screenshots from the September 2026 Fire Warden Compliance & Readiness Analytics project, developed using Google BigQuery, SQL, and Looker Studio.
+          </p>
+    </div>
+    </section>
+
+    <section class="fw-section" id="insights">
+      <div class="fw-container">
+        <p class="fw-eyebrow">07 / PERFORMANCE ANALYSIS</p>
+        <h2>What the September data revealed</h2>
+        <div class="fw-insight"><strong>Attendance, not active staffing, was the primary gap.</strong> All 24 active positions were staffed, but 153 of 504 expected check-ins were missed.</div>
+        <div class="fw-insight"><strong>Prioritize the lowest-performing floors.</strong> The 1st Floor recorded 42.86% coverage and the 9th Floor recorded 45.24%.</div>
+        <div class="fw-insight"><strong>Capture quick improvements.</strong> The Mezzanine reached 78.57% and was one additional completed check-in short of the 80% benchmark.</div>
+        <div class="fw-insight"><strong>Learn from stronger-performing floors.</strong> The 8th and 10th Floors each reached 90.48% attendance coverage.</div>
+        <div class="fw-insight"><strong>Monthly averages conceal daily variation.</strong> Daily coverage reached 87.5% on multiple reporting days and fell to 33.33% on September 18.</div>
+      </div>
+    </section>
+
+    <section class="fw-section" id="recommendations">
+      <div class="fw-container">
+        <p class="fw-eyebrow">08 / MANAGEMENT RECOMMENDATIONS</p>
+        <h2>Turn analytics into operational follow-up</h2>
+        <div class="fw-grid">
+          <div class="fw-card"><h3>01. Prioritize exceptions</h3><p>Review the 1st and 9th Floors first because their attendance coverage was lowest.</p></div>
+          <div class="fw-card"><h3>02. Address near-target gaps</h3><p>Focus on the Mezzanine, which needed just one additional completed check-in to meet the project benchmark.</p></div>
+          <div class="fw-card"><h3>03. Track daily trends</h3><p>Use reporting-date analysis to distinguish recurring problems from isolated missed check-ins.</p></div>
+          <div class="fw-card"><h3>04. Separate causes</h3><p>Investigate check-in execution before treating a fully staffed floor as a recruitment problem.</p></div>
+          <div class="fw-card"><h3>05. Compare best practices</h3><p>Examine processes on higher-performing floors for transferable attendance practices.</p></div>
+          <div class="fw-card"><h3>06. Expand reporting</h3><p>Extend the model to historical periods, roster changes and automated management reporting.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fw-section" id="next">
+      <div class="fw-container">
+        <p class="fw-eyebrow">09 / PROJECT STATUS</p>
+        <h2>Current delivery and next development</h2>
+        <p class="fw-lead"><strong>Completed:</strong> September 2026 analytical reporting model, six documented BigQuery reporting views, sanitized portfolio datasets and Looker Studio dashboard reporting.</p>
+        <p class="fw-lead"><strong>Planned extensions:</strong> Automated monthly, quarterly and annual reporting; historical comparisons; effective-dated roster changes; Fire Warden training and drill participation; and expanded Fire &amp; Life Safety operational analytics. These extensions are roadmap items, not features claimed as already deployed.</p>
+        <p class="fw-lead"><strong>Privacy:</strong> Published portfolio data uses anonymized participant identifiers and omits employee names, telephone numbers and exact site location.</p>
+        <div class="fw-actions"><a class="fw-btn" href="https://github.com/starkman9880/fire-warden-compliance-analytics" target="_blank" rel="noopener noreferrer">Explore Source Code &amp; Documentation ↗</a><a class="fw-btn secondary" style="border-color:#2563eb;color:#1d4ed8!important" href="index.html#projects">Return to Projects</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fw-footer"><div class="fw-container">Fire Warden Compliance &amp; Readiness Analytics · Starky Paulino · <a href="index.html">Portfolio Home</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

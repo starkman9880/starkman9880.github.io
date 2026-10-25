@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starky Paulino | Data Analyst</title>
+    <!-- Connect our CSS -->
+    <link rel="stylesheet" href="style.css">
+<style>
+#skills .skills-group-title{font-size:18px;margin:36px 0 24px;color:#0b2035}
+#skills .skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+#skills .skill-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:#eef4ff;border-radius:12px}
+#skills .skill-icon img{display:block;width:40px;height:40px;object-fit:contain;max-width:100%}
+#skills .skill-card h3{margin:16px 0 10px}
+@media(max-width:700px){#skills .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){#skills .skills-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            Starky Paulino
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="Starky_Paulino_Data_BI_Resume.pdf" download>Resume</a></li>
+            <li><a href="https://www.linkedin.com/in/starky-paulino-6240a4169/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="mailto:starkyepaulino@gmail.com">Email</a></li>
+        </ul>
+    </nav>
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="hero-content">
+            <p class="eyebrow">
+                DATA ANALYST | BUSINESS INTELLIGENCE | NEW YORK, NY
+            </p>
+            <h1>
+                Turning Data Into
+                <br>
+                Actionable Business Insights
+            </h1>
+            <p class="hero-description">
+                I analyze operational data, build dashboards, and transform
+                complex information into insights that support better
+                business decisions.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects">View My Projects</a>
+                <a href="#resume">Download Resume</a>
+            </div>
+        </div>
+    </section>
+    <!-- Future sections will go here -->
+   <!-- FEATURED PROJECTS -->
+<section id="projects">
+    <div class="projects-header">
+        <p class="section-label">PORTFOLIO</p>
+        <h2>Featured Data Analytics Projects</h2>
+        <p class="projects-intro">
+            Real-world analytics projects focused on operational
+            performance, compliance, risk, and business intelligence.
+        </p>
+    </div>
+    <div class="projects-grid">
+        <!-- PROJECT 1 -->
+        <article class="project-card">
+            <div class="project-number">01</div>
+            <div class="project-content">
+                <p class="project-category">
+                    COMPLIANCE ANALYTICS
+                </p>
+                <h3>
+                    Fire Warden Compliance Analytics
+                </h3>
+                <p>
+                    Analyzed fire warden attendance data to measure
+                    floor coverage, identify compliance gaps, track
+                    daily trends, and compare actual performance
+                    against operational targets.
+                </p>
+                <div class="project-tools">
+                    <span>Excel</span>
+                    <span>SQL</span>
+                    <span>BigQuery</span>
+                    <span>Looker Studio</span>
+                </div>
+                <a href="fire-warden.html" class="project-link">
+                    View Case Study →
+                </a>
+            </div>
+        </article>
+        <!-- PROJECT 2 -->
+        <article class="project-card">
+            <div class="project-number">02</div>
+            <div class="project-content">
+                <p class="project-category">
+                    OPERATIONS ANALYTICS
+                </p>
+                <h3>
+                    Fire Alarm & Building Operations Analytics
+                </h3>
+                <p>Built a four-page Power BI report to explore recorded impairments, floor activity, trouble and supervisory observations, report coverage, and eligible durations. Public visuals use fictional demonstration data.</p>
+                <div class="project-tools"><span>Excel</span><span>Power Query</span><span>Power BI</span><span>DAX</span></div>
+                <a href="fire-alarm-operations.html" class="project-link">
+                    View Case Study →
+                </a>
+            </div>
+        </article>
+        <!-- PROJECT 3 -->
+        <article class="project-card">
+            <div class="project-number">03</div>
+            <div class="project-content">
+                <p class="project-category">
+                    RISK & COMPLIANCE
+                </p>
+                <h3>
+                    Hot Work Compliance Analytics
+                </h3>
+                <p>
+                    Evaluated hot-work activity and permit records
+                    to track work volume, contractor activity,
+                    compliance trends, and operational risk.
+                </p>
+                <div class="project-tools">
+                    <span>Excel</span>
+                    <span>SQL</span>
+                    <span>Power BI</span>
+                </div>
+                <a href="hot-work.html" class="project-link">
+                    View Case Study →
+                </a>
+            </div>
+        </article>
+<!-- PROJECT 04: LUMASCAPE E-COMMERCE ANALYTICS -->
+<article class="project-card">
+    <div class="project-number">
+      04
+    </div>
+    <div class="project-content">
+      <p class="project-category">
+        E-COMMERCE & BUSINESS INTELLIGENCE
+      </p>
+      <h3>
+        LumaScape E-Commerce Analytics
+      </h3>
+      <p>
+        Developed an end-to-end e-commerce analytics solution
+        using Google BigQuery, SQL, and Looker Studio to
+        evaluate revenue, gross profit, sales trends,
+        product category performance, and year-over-year
+        growth across 2024–2026.
+      </p>
+      <div class="project-tools">
+        <span>BigQuery</span>
+        <span>SQL</span>
+        <span>Looker Studio</span>
+        <span>Google Cloud</span>
+      </div>
+      <a href="lumascape.html" class="project-link">
+        View Case Study →
+      </a>
+    </div>
+  </article>
+    <article class="project-card">
+        <div class="project-number">05</div>
+        <div class="project-content">
+          <p class="project-category">JOB MARKET ANALYTICS</p>
+          <h3>Data &amp; Cloud Career Dashboard</h3>
+          <p>
+            Analyzed job skill demand and advertised pay across data
+            roles, comparing a U.S. snapshot with an interactive
+            exact-NYC analysis in Excel.
+          </p>
+          <div class="project-tools">
+            <span>Excel</span>
+            <span>Power Query</span>
+            <span>Power Pivot</span>
+            <span>DAX</span>
+          </div>
+          <a href="career-dashboard.html" class="project-link">
+            View Case Study →
+          </a>
+        </div>
+      </article>
+    </div>
+</section>
+    <!-- ABOUT SECTION -->
+<section id="about">
+    <div class="about-container">
+        <!-- LEFT: HEADSHOT -->
+        <div class="about-image">
+            <img src="./images/starky-headshot.jpg" alt="Starky Paulino">
+        </div>
+        <!-- RIGHT: ABOUT CONTENT -->
+        <div class="about-content">
+            <p class="section-label">ABOUT ME</p>
+            <h2>
+                Data Analyst with Real-World
+                Operations Experience
+            </h2>
+            <p>
+                I'm a New York-based Data Analyst with extensive experience in
+fire and life safety, security operations, and building operations.
+            </p>
+            <p>
+                I use data to identify operational trends, measure
+                compliance, uncover risks, and transform complex
+                information into actionable business insights.
+            </p>
+            <p>
+                My portfolio focuses on real-world analytics projects
+                involving operational performance, compliance,
+                fire safety, building systems, and business intelligence.
+            </p>
+            <a href="#projects" class="about-button">
+                Explore My Projects
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- Connect our JavaScript -->
+<!-- Future sections will go here -->
+<!-- SKILLS SECTION -->
+<section id="skills"><div class="skills-header"><p class="section-label">TECHNICAL SKILLS</p><h2>Tools I Use to Turn Data Into Insights</h2></div>
+<h3 class="skills-group-title">Analytics & reporting</h3><div class="skills-grid">
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/excel.png" alt="" width="40" height="40" loading="lazy"></span><h3>Excel</h3><p>Data Cleaning • PivotTables • Analysis</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/sql.png" alt="" width="40" height="40" loading="lazy"></span><h3>SQL</h3><p>Queries • Joins • CTEs • Aggregations</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/power-bi.png" alt="" width="40" height="40" loading="lazy"></span><h3>Power BI</h3><p>Power Query • DAX • Dashboards</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/python.png" alt="" width="40" height="40" loading="lazy"></span><h3>Python</h3><p>Pandas • NumPy • Data Analysis</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/bigquery.png" alt="" width="40" height="40" loading="lazy"></span><h3>BigQuery</h3><p>Cloud SQL • Data Warehousing • Analytics</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/looker-studio.png" alt="" width="40" height="40" loading="lazy"></span><h3>Looker Studio</h3><p>Dashboards • Reporting • KPI Tracking</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/github.png" alt="" width="40" height="40" loading="lazy"></span><h3>GitHub</h3><p>Project Documentation • Repository Management</p></div>
+</div>
+<h3 class="skills-group-title">Currently learning</h3><div class="skills-grid">
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/tableau.png" alt="" width="40" height="40" loading="lazy"></span><h3>Tableau</h3><p>Data Visualization</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/r.png" alt="" width="40" height="40" loading="lazy"></span><h3>R</h3><p>Statistical Analysis</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/azure.png" alt="" width="40" height="40" loading="lazy"></span><h3>Azure</h3><p>Cloud Fundamentals</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/aws.png" alt="" width="40" height="40" loading="lazy"></span><h3>AWS</h3><p>Cloud Fundamentals</p></div>
+</div>
+<h3 class="skills-group-title">Additional skills</h3><div class="skills-grid">
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/html.png" alt="" width="40" height="40" loading="lazy"></span><h3>HTML</h3><p>Page Structure</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/css.png" alt="" width="40" height="40" loading="lazy"></span><h3>CSS</h3><p>Layout & Styling</p></div>
+<div class="skill-card"><span class="skill-icon"><img src="images/skills/javascript.png" alt="" width="40" height="40" loading="lazy"></span><h3>JavaScript</h3><p>Web Fundamentals</p></div>
+</div>
+</section>
+    <script src="script.js"></script>
+</body>
+</html>
